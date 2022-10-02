@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/codeforfunfelix/testette/issues"
   },
-  "homepage": "https://github.com/codeforfunfelix/testette#readme"
+  "homepage": "https://github.com/codeforfunfelix/testette#readme",
+  "dependencies": {
+    "express": "^4.0.0"
+  }
 }
