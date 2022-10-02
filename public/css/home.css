@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+    background-color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    background-color: #1B2845;
+    position: fixed;
+    text-align: center !important;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-bottom: solid 1px #335C81;
+    z-index: 100;
+}
+header h1 {
+    font-family: 'Fredoka One', cursive;
+    color: white;
+    letter-spacing: 3px;
+}
+
+#search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5%;
+    margin-top: 1%;
+}
+#search-bar input {
+    width: 50%;
+    border-radius: 25px;
+    height: 150%;
+    padding-left: 5%;
+}
+#results {
+    display: none;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 22%;
+    z-index: 99;
+    background-color: white;
+    width: 50%;
+    text-align: center;
+}
+#results:hover {
+    display: block !important;
+}
+#results .search-result {
+    padding: 5px;
+}
+
+h2 {
+    color: black;
+}
+
+img {
+    position: relative;
+    left: -5;
+    float: left;
+}
+
+.image-with-text {
+    display: flex;
+    align-items: center;
+}
+.image-with-text .next-to-image {
+    margin-left: 10px;
+}
+
+body > h2 {
+    text-align: center;
+}
+
+#study-sets {
+    display: flex;
+    justify-content: center;
+}
+
+#study-sets .set-link {
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+    border-radius: 25px;
+    background-color: lightgray;
+}
+#study-sets .set-link a {
+    color: black;
+    text-decoration: none;
+}
+
+footer {
+    width: 100%;
+    position: relative;
+    background-color: #1B2845;
+    color: white;
+    bottom: -15;
+    left: -8;
+    padding-left: 5px;
+}
+footer span {
+    font-family: 'Fredoka One', cursive;
+}

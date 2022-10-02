@@ -1,0 +1,28 @@
+<head>
+    <title><%= set.name %> (Flashcards) - Testette</title>
+    <link href="/css/flashcards.css" rel="stylesheet" />
+    <script src="/scripts/flashcards.js" defer></script>
+</head>
+
+<%- include('partials/bio'); %>
+
+<div id="flashcards">
+    <% Object.keys(set.terms).forEach(term => { %>
+        <div class="term-display">
+            <div class="flashcard">
+                <div id="term">
+                    <p><%= term %></p>
+                </div>
+                <div id="definition">
+                    <p><%= set.terms[term] %></p>
+                </div>
+            </div>
+        </div>
+    <% }); %>
+</div>
+<br>
+<div id="options">
+    <button id="back-option">⬅</button>
+    <button id="forward-option">➡</button>
+    <button id="flip-option">🔁</button>
+</div>

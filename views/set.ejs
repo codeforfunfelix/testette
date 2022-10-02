@@ -1,0 +1,18 @@
+<head>
+    <title><%= set.name %> - Testette</title>
+    <link href="/css/terms.css" rel="stylesheet" />
+</head>
+
+<%- include('partials/bio'); %>
+
+<button><a href="/flashcards/<%= set.uri %>">Flashcards</a></button> | 
+<button><a href="/match/<%= set.uri %>?terms=10">Match</a></button> | 
+<button><a href="/gravity/<%= set.uri %>">Gravity</a></button>
+
+<div id="terms">
+    <% Object.keys(set.terms).forEach(term => { %>
+        <div class="term-display">
+            <p><%= term %> | <%= set.terms[term] %></p>
+        </div>
+    <% }); %>
+</div>

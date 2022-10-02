@@ -1,0 +1,49 @@
+#field {
+    width: 90%;
+    height: 90%;
+}
+
+#field .item {
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 25px;
+    background-color: lightblue;
+    cursor: grab;
+    border: 3px solid black;
+
+    position: fixed;
+
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+
+    transition: 0.5s ease opacity;
+}
+
+#timer {
+   float: right;
+   font-size: 50px;
+   margin-right: 10px;
+}
+
+.popup {
+    z-index: 100000000;
+    width: 40%;
+    height: fit-content;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 25px;
+    text-align: center;
+    display: none;
+    padding-bottom: 30px;
+}
+.popup.show {
+    display: block;
+}

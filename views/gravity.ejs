@@ -1,0 +1,33 @@
+<head>
+    <title><%= set.name %> (Gravity) - Testette</title>
+    <link rel="stylesheet" href="/css/gravity.css">
+    <script src="/scripts/gravity.js" defer></script>
+</head>
+
+<div id="field">
+    <% Object.keys(set.terms).forEach((term, i) => { %>
+        <div class="asteroid" data-definition="<%= set.terms[term] %>">
+            <img src="/images/Meteor.png" width="200px">
+            <p><%= term %></p>
+        </div>
+    <% }); %>
+</div>
+
+<div id="type-bar">
+    <input type="text" placeholder="Type the definition here" />
+    <button>Send</button>
+</div>
+
+<h1 id="score-display">0</h1>
+
+<div class="popup" id="correct-answer">
+    <h2></h2>
+    <input type="text" placeholder="Type it here." />
+</div>
+
+<div class="popup" id="game-over">
+    <h2>Game over!</h2>
+    <p>Your score: <span></span></p>
+    <button onclick="location.reload()">Play Again</button> 
+    <button onclick="location.href = '/set/<%= set.uri %>'">Exit</button>
+</div>

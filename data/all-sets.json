@@ -1,0 +1,14 @@
+[
+    {
+        "id": "test",
+        "uri": "test",
+        "name": "Test Set",
+        "creator": "Felix Singer"
+    },
+    {
+        "id": "ec14bd77-68fc-4bf5-a4f9-f15f494356dd",
+        "uri": "40-periodic-elements",
+        "name": "40 Periodic Elements",
+        "creator": "Felix Singer"
+    }
+]

@@ -1,0 +1,29 @@
+body {
+    margin-left: 5%;
+}
+
+.flashcard div {
+    border: solid 1px black;
+    border-radius: 25px;
+    display: none;
+    width: 30%;
+    height: 50%;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    overflow-wrap: break-word;
+    cursor: pointer;
+
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.flashcard div p {
+    font-size: 400%;
+}
+
+#options {
+    margin-left: 3%;
+}

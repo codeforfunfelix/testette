@@ -1,0 +1,65 @@
+<head>
+    <title>Home - Testette</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<header>
+    <h1>Testette</h1>
+</header>
+<br>
+<br>
+<br>
+<br>
+<div id="search-bar">
+    <input type="text" placeholder="Search for a study set...."><br>
+</div>
+<div id="results">
+    <% sets.forEach(set => { %>
+        <div class="search-result">
+            <a href="/set/<%= set.uri %>"><%= set.name %></a>
+        </div>
+    <% }); %>
+</div>
+<script>
+    document.querySelector("#search-bar").addEventListener('focus', _ => {
+        document.querySelector("#results").style.display = "block";
+    });
+    document.querySelector("#search-bar").addEventListener('unfocus', _ => {
+        document.querySelector("#results").style.display = "none";
+    });
+
+    document.querySelector("#search-bar").addEventListener('keyup', _ => {
+       let query = document.querySelector("#search-bar input").value.toLowerCase().trim();
+       Array.from(document.querySelectorAll("#results .search-result")).forEach(elmt => {
+          if (!elmt.querySelector("a").innerHTML.trim().toLowerCase().includes(query)) {
+            elmt.style.display = 'none';
+          } else {
+            elmt.style.display = 'block';
+          }
+       });
+    })
+</script><br>
+<hr />
+<div class="image-with-text">
+    <img src="/images/books.avif">
+    <div class="next-to-image">
+        <h2>Your hub for digital studying- with no paywall!</h2>
+        <p>Testette has everything that other sights have- flashcards, matching games, and more- but free of charge!
+            You'll enjoy studying for your next test with our interactive systems. Unlike other studying sites, we haven't become greedy and decided to
+            take advantage of our vulnerable users, who're just trying to get a decent grade on their next assessment! No, here at Testette, we believe that
+            education should be free and open to everyone, including the tools that enhance it. If you used to use a different studying site that one day added
+            annoying paywalls and outright removed some of the features that made studying most effective, then Testette is the place for you!
+        </p>
+    </div>
+</div>
+<h2>Popular Study Sets</h2>
+<div id="study-sets">
+    <% sets.forEach(set => { %>
+        <div class="set-link">
+            <a href="/set/<%= set.uri %>"><%= set.name %></a>
+        </div>
+    <% }); %>
+</div>
+<footer>
+    <p><span>Testette</span> is a product of Fwitter LLC.<a href="https://scratched-prickly-horse.glitch.me/legal-disclaimer">*</a>. ©2022 Felix Singer. All rights reserved.</p>
+</footer>

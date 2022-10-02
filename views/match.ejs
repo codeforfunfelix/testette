@@ -1,0 +1,37 @@
+<head>
+    <title><%= set.name %> (Match) - Testette</title>
+    <link rel="stylesheet" href="/css/match.css">
+    <script src="/scripts/match.js" defer></script>
+</head>
+
+<button><a href="/set/<%= set.uri %>">< Back</a></button>
+<button onclick="document.querySelector('#options').classList.add('show')">Options</button>
+<label id="timer">0:00</label>
+
+<div id="field">
+    <% Object.keys(set.terms).forEach((term, i) => { %>
+        <div class="item" id="item-<%= i * 2 %>" data-partner-id="item-<%= i * 2 + 1 %>">
+            <p><%= term %></p>
+        </div>
+        <div class="item" id="item-<%= i * 2 + 1 %>" data-partner-id="item-<%= i * 2 %>">
+            <p><%= set.terms[term] %></p>
+        </div>
+    <% }); %>
+</div>
+
+<div id="options" class="popup">
+    <h1>Options</h1>
+    <form>
+        <label>Number of terms: </label>
+        <input type="number" min="1" name="terms" value="10" required><br>
+        <br><button>Restart with New Settings</button> 
+        <button type="button" onclick="document.querySelector('#options').classList.remove('show')">Cancel</button>
+    </form>
+</div>
+
+<div id="game-over" class="popup">
+    <h1>Game over!</h1>
+    <p>Your time: <span id="time-display"></span></p>
+    <button onclick="location.reload()">Play Again</button> 
+    <button onclick="location.href = '/set/<%= set.uri %>'">Exit</button>
+</div>
