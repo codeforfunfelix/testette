@@ -11,5 +11,16 @@
             "src": "/(.*)",
             "dest": "/"
         }
-    ]
+    ],
+    "functions": {
+        "data/**/*": {
+          "includeFiles": "*"
+        },
+        "public/**/*": {
+            "includeFiles": "*"
+        },
+        "views/**/*": {
+            "includeFiles": "*"
+        }
+    }
 }
